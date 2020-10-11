@@ -1,0 +1,29 @@
+TITLE:normalize-space(concat("Title:" ,//span[@id="productTitle"]/text()))
+SELLER:normalize-space(concat("Seller:" ,//a[@id="bylineInfo"]/text()))
+SELLER_LINK:normalize-space(concat("Seller_link:" ,//a[@id="bylineInfo"]/@href))
+OFFER_RATING:normalize-space(concat("Stars:",//span[@id="acrPopover"]/span[1]/a/i[1]/span/text()))
+OFFER_TOTAL_RATING:normalize-space(concat("Rating_global:",//span[@data-hook="total-rating-count"]/text()))
+OFFER_PRICE:normalize-space(concat("Offer_price:",//*[@id="priceblock_ourprice"]/text()))
+OFFER_SHIPPING_INFO:normalize-space(concat("Shipping_info:",//span[@class="a-size-base a-color-secondary"][contains(text(),"Shipping & Import")]/text()))
+OFFER_SHORT_DESCRIPTION://div[@id="feature-bullets"]/ul/li/span[normalize-space(concat("OFFER_SHORT_DESCRIPTION:",text()))]
+CUSTOMERS_WHO_REVIEWED...://div[@class="a-section a-spacing-none p13n-asin"]/a/div/text()
+
+CUSTOMERS_WHO_REVIEWED_PRICE://div[@class="a-section a-spacing-none p13n-asin"]/div[4]/a/@href
+CUSTOMERS_WHO_REVIEWED_LINK://div[@class="a-section a-spacing-none p13n-asin"]/div[4]/a/@href
+PRODUCT_INFO_TABLE_KEY:=//table[@id="productDetails_detailBullets_sections1"]/tbody/tr/th/text()
+PRODUCT_INFO_TABLE_VALUE://table[@id="productDetails_detailBullets_sections1"]/tbody/tr/td/text()
+PRODUCT_FULL_DESCRIPTION_DISCLAIM:normalize-space(concat("PRODUCT_FULL_DESCRIPTION_DISCLAIM:", //*[@id="productDescription"]/*[@class="disclaim"]))
+PRODUCT_FULL_DESCRIPTION:concat("PRODUCT_FULL_DESCRIPTION",//div[@id="productDescription"]/*/text())
+PRODUCT_FROM_MANUFACTURER://p[contains(@class, 'aplus') and contains(/*, 'aplus-module-1-description')]
+PRODUCT_QUESTIONS://*[contains(@data-action, 'ask-')]/text()
+PRODUCT_QUESTION_ANSWER://*[contains(@class, 'askLongText')]/text()
+SPONSORED_PRODUCTS_RELATED_TO_THIS_TITLE://div[contains(@id, 'sp_detail')]/a/@title
+SPONSORED_PRODUCTS_RELATED_TO_THIS_LINK://div[contains(@id, 'sp_detail')]/a/@href
+SPONSORED_PRODUCTS_RELATED_TO_THIS_PRICE://div[contains(@id, 'sp_detail')]/div[contains(@class,"a-row")]/a[1]/span[contains(@class,"-price")]/text()
+BOTTOM_CUSTOMER_REVIEW_STARS://*[contains(@data-hook,"rating-out-of-text")]/text()
+TOP_REVIEW_USER_NAME://div[contains(@class, 'profile-content')]/*[@class="a-profile-name"]/text()
+TOP_REVIEW_USER_LINK://a[contains(@href, '/gp/profile')]/@href
+TOP_REVIEW_USER_AVATAR://div[contains(@class, 'profile-avatar')]/img/@src
+TOP_REVIEW_RATING://*[contains(@data-hook, 'review-star-rating')]/*/text()
+TOP_REVIEW_LOCATION_AND_DATE://*[contains(@data-hook, 'review-date')]/text()
+TOP_REVIEW_TEXT://*[contains(@class, 'reviewText')]/*/text()

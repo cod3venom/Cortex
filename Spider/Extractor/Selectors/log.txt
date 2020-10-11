@@ -1,0 +1,18 @@
+LINK~https://www.amazon.co.uk/Stainless-Floating-Seamless-Ornament-Decoration/dp/B07QSF2SJN
+TITLE~304 Stainless Steel Gazing Balls Floating Pond Balls Seamless Mirror Ball Sphere Garden Ornament for Home Garden Ornament Decoration: Amazon.co.uk: DIY & Tools
+SELLER~Brand: youngfate
+SELLER_LINK~/s/ref=bl_dp_s_web_0?ie=UTF8&search-type=ss&index=diy&field-keywords=youngfate
+OFFER_RATING~['5.0 out of 5 stars', '5.0 out of 5 stars']
+OFFER_TOTAL_RATING~[]
+OFFER_PRICE~[]
+OFFER_SHIPPING_INFO~[]
+OFFER_SHORT_DESCRIPTION~Stainless steel hollow ball made of 304 stainless steel main, durable.
+CUSTOMERS_WHO_REVIEWED_TITLE~[]
+CUSTOMERS_WHO_REVIEWED_LINK~[]
+CUSTOMERS_WHO_REVIEWED_IMAGE~[]
+CUSTOMERS_WHO_REVIEWED_STARS~[]
+CUSTOMERS_WHO_REVIEWED_PRICE~[]
+PRODUCT_INFO_TABLE_KEY~['\nASIN\n', 'Customer Reviews', '\nBest Sellers Rank\n', '\nDate First Available\n']
+PRODUCT_INFO_TABLE_VALUE~['\nB07QSF2SJN\n', '\n', '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n', '\n\n\n', '\n5.0 out of 5 stars\n', '\n', '\n', '\n17 April 2019\n']
+PRODUCT_DESCRIPTION~['Features: ', 'Stainless steel hollow ball is mainly made of 304 stainless steel that is durable. ', 'High brightness shine sphere. ', 'Mirror metal decorative accessories. ', 'Suitable for various of shopping malls, home decoration, office space decorations etc. ', ' ', 'Specifications:', ' ', 'Material: stainless steel ', 'Optional Diameter: (approx.) 1.9cm/3.8cm/ 5.1cm/ 8cm /10cm / 12cm / 15cm /20cm/30cm (0.75in/1.50in/2.01in/3.15in/3.94in/4.72in/5.91in/7.87in/11.81in)', 'Color: mirror ', ' ', 'Packing list:', '1 * Stainless Steel Mirror Sphere']
+PRODUCT_FROM_MANUFACTURER~[]

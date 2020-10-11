@@ -1,0 +1,14 @@
+[
+    {
+      "Title": "Store_title",
+      "Target": "//*[@class='store_name']/text()"
+    },
+  {
+    "Title": "Offer_link",
+    "Target": "//a/@href"
+  },
+  {
+    "Title": "Offer_price",
+    "Target": "//span/text()"
+  }
+]
