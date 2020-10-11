@@ -9,12 +9,12 @@ from Spider.Browser.JsBundler import JsBundler
 from Spider.Network.Clock import Clock
 from Hacker.Logging import Logging
 from Texts.Bundle import Bundle
-import time
+import time,os
 
 class Javascript:
     def __init__(self, Viewer):
         self.chrome = Viewer
-        self.__jslist_path__ = '/home/venom/Desktop/Cortex/Spider/Browser/JSCODE/jslist.init'
+        self.__jslist_path__ = os.getcwd() + '/Spider/Browser/JSCODE/jslist.init'
         self.bundler = JsBundler(self.__jslist_path__)
 
     def __execute__(self, command):

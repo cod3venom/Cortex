@@ -20,6 +20,6 @@ class Tor:
                 controller.signal(Signal.NEWNYM)
                 return  True
         except Exception as ex:
-            print(str(ex))
+            Logging(2,Bundle().getString(56), Bundle().getString(57))
             return  False
 

@@ -14,7 +14,7 @@ class PyDict:
         self.delimiter = ":"
         self.delimiter2 = '~'
         self.newline = "\n"
-        self.path = os.getcwd() + "/Spider/Extractor/Selectors/selector.stux"
+        self.path = os.getcwd() + "/Spider/Extractor/Selectors/selector.cort"
         self.stack = fs().Read(self.path)
         self.cluster = {'Keys':[], 'Values':[]}
         self.__xpath__ = None

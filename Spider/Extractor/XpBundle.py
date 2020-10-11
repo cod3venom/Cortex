@@ -4,7 +4,8 @@ from Texts.Bundle import Bundle
 
 class XpBundle:
     def __init__(self):
-        self.path = '/home/venom/Desktop/Cortex/Spider/Extractor/Selectors/selector.stux'
+        self.CURRENT_ROOT = str(os.getcwd())
+        self.path =  self.CURRENT_ROOT + 'Spider/Extractor/Selectors/'
 
     def getString(self,num):
         if os.path.isfile(self.path):

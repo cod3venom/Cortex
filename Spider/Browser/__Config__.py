@@ -1,7 +1,7 @@
 from selenium.webdriver.chrome.options import Options
-
+import os
 class __Config__:
-    JSCODE = "JSCODE/jslist.init"
+    JSCODE = os.getcwd() + "/JSCODE/jslist.init"
     def __init__(self,incognito, headless, cache,root,tor,randomAgent):
         self.incognito = incognito
         self.headless = headless
@@ -9,6 +9,7 @@ class __Config__:
         self.root = root
         self.tor = tor
         self.random = randomAgent
+
 
     def __GET_OPTION__(self):
         option = Options()
