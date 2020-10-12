@@ -1,7 +1,7 @@
 import time
 
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException, WebDriverException
+from selenium.common.exceptions import TimeoutException, WebDriverException, NoSuchWindowException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
@@ -40,11 +40,14 @@ class __Chromium__:
             self.chrome.get(self.address)
         except exceptions.MaxRetryError:
             Bundle().getString(51)
+            time.sleep(10)
             self.Navigate()
             Bundle().getString(52)
 
         except WebDriverException:
             raise Bundle().getString(53)
+        except NoSuchWindowException:
+            print("CLOSED")
 
 
     def Source(self):

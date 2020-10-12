@@ -2,7 +2,6 @@ import datetime
 
 from Hacker.FileSystem import FileSystem as fs
 from Texts.Bundle import Bundle
-from Spider.Extractor.Vendors.Amazon import Amazon
 from Hacker.ClusterClient import send
 
 

@@ -16,3 +16,10 @@ PRODUCT_INFO_TABLE_KEY~//table[@id="productDetails_detailBullets_sections1"]/tbo
 PRODUCT_INFO_TABLE_VALUE~//table[@id="productDetails_detailBullets_sections1"]/tbody/tr/td/text()
 PRODUCT_DESCRIPTION~//div[@id="productDescription"]/*/text()
 PRODUCT_FROM_MANUFACTURER~//*[contains(@data-a-expander-name, 'aplus-module-expander')]/descendant::p/text() | //*[contains(@data-a-expander-name, 'aplus-module-expander')]/descendant::span/text() |//*[contains(@data-a-expander-name, 'aplus-module-expander')]/descendant::h1/text() |//*[contains(@data-a-expander-name, 'aplus-module-expander')]/descendant::h2/text()
+
+PRODUCT_REVIEW_USER~//div[contains(@class, 'profile-content')]/*[@class="a-profile-name"]/text()
+PRODUCT_REVIEW_USER_LINK~//a[contains(@href, '/gp/profile')]/@href
+PRODUCT_REVIEW_USER_AVATAR~//div[contains(@class, 'profile-avatar')]/img/@src
+PRODUCT_REVIEW_USER_STARS~//*[contains(@data-hook, 'review-star-rating')]/*/text()
+PRODUCT_REVIEW_USER_LOCATION_DATE~//*[contains(@data-hook, 'review-date')]/text()
+PRODUCT_REVIEW_USER_COMMENT~//*[contains(@class, 'reviewText')]/*/text()

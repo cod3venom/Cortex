@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException, JavascriptException
+from selenium.common.exceptions import TimeoutException, JavascriptException, NoSuchWindowException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
@@ -26,6 +26,8 @@ class Javascript:
             raise Bundle().getString(48)
         except TypeError:
             pass
+        except NoSuchWindowException:
+            print("CLOSED JS")
 
 
 
