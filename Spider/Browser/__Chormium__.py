@@ -63,6 +63,9 @@ class __Chromium__:
     def Scroll_V_V(self):
         self.js.scrollV_V()
 
+    def CurrentURL(self):
+        return  self.chrome.current_url
+
     #@TODO:Captcha is not empty but doesnt appears in webbrowser input field
     #@TODO:IN this function check if cpatcha is not null
     def setCaptcha(self,captcha,_by):

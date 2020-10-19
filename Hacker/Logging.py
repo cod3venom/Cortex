@@ -11,7 +11,7 @@ class Logging:
         self.description = str(description)
         self.cluster_id = 0
 
-        self.green = str(Fore.GREEN)
+        self.green = str(Fore.LIGHTGREEN_EX)
         self.red = str(Fore.RED)
         self.yellow = str(Fore.YELLOW)
         self.blue = str(Fore.BLUE)

@@ -2,6 +2,7 @@ import datetime
 
 from Hacker.FileSystem import FileSystem as fs
 from Texts.Bundle import Bundle
+from Hacker.Logging import Logging
 from Hacker.ClusterClient import send
 
 
@@ -9,11 +10,16 @@ import json, os, time
 
 class PyDict:
     clusterized = ''
-    def __init__(self):
+    def __init__(self,selector):
         self.delimiter = ":"
         self.delimiter2 = '~'
         self.newline = "\n"
-        self.path = os.getcwd() + "/Spider/Extractor/Selectors/selector.cort"
+        self.path = os.getcwd() + "/Spider/Extractor/Selectors/"+str(selector)+ ".cort"
+        if os.path.isfile(self.path) == False:
+            Logging(2,Bundle().getString(60),Bundle().getString(61))
+            exit()
+
+        print(self.path)
         self.stack = fs().Read(self.path)
         self.cluster = {'Keys':[], 'Values':[]}
         self.__xpath__ = None

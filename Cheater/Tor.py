@@ -20,6 +20,6 @@ class Tor:
                 controller.signal(Signal.NEWNYM)
                 return  True
         except Exception as ex:
-            Logging(2,Bundle().getString(56), Bundle().getString(57))
+            Logging(3,Bundle().getString(57), Bundle().getString(58) + '\n' +str(ex))
             return  False
 
