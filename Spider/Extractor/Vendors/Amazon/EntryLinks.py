@@ -115,6 +115,28 @@ class EntryLinks:
                     self.SUBSTACK.append(link)
                     self.FS.Append("DB/AWS_STORE_ALL_SUBPAGES.sql", link, False)
 
+    def GetProductsFromSubpages(self):
+        xpath = '//a[@class="a-link-normal a-text-normal"][contains(@href,"-")]/@href'
+        Targets = self.FS.Read('DB/AWS_STORE_ALL_SUBPAGES.sql')
+        if "\n" in Targets:
+            links = Targets.split("\n")
+            for link in links:
+                if link != "":
+                    self.SUBSTACK.append(link)
+
+        for link in self.SUBSTACK:
+            self.chrome.address = link
+            self.chrome.Navigate()
+            self.chrome.Scroll_V_V()
+            time.sleep(3)
+            content = html.fromstring(self.chrome.Source())
+            found = content.xpath(xpath)
+            for f in found:
+                if "https://www.amazon.de" not in f:
+                    f = "https://www.amazon.de" + f
+                self.FS.Append("DB/AWS_FINAL_OFFER_LINKS_FROM_SELLERS_WITH_SELLER_ID.json", f, False)
+            print(str(found))
+
     def lxmlExtract(self,xpath:str):
         if xpath!=None and self.chrome.Source()!=None:
             try:

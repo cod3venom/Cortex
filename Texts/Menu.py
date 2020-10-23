@@ -17,7 +17,7 @@ class Menu:
         #self.PrintMenu(menu)
         #Categories('DE').c_main(0)
         category = 'https://www.amazon.de/s?i=kitchen&bbn=3167641&rh=n%3A3167641%2Cn%3A3169011%2Cn%3A20679858031%2Cn%3A3310821%2Cn%3A3310911%2Cn%3A3098777031&page=1&language=en&qid=1602962866&ref=sr_pg_59'
-        EntryLinks(category).GetSellerAllSubLinks()
+        EntryLinks(category).GetProductsFromSubpages()
     def PrintMenu(self, menu : str) -> int:
         if menu!=None:
             menu = self.colors.bold + menu + self.colors.endbold

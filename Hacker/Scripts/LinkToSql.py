@@ -9,8 +9,10 @@ if __name__ == "__main__":
         with open(inp, "r") as reader:
             _lines = reader.read().split("\n")
             with open(outp, "a") as writer:
+                counter = 0
                 for line in _lines:
+                    counter+=1
                     sql = "INSERT INTO Links(Address) VALUES('{}'); \n".format(line)
-                    print("{} --- {}".format(outp, sql))
+                    print("[{}] {} --- {}".format(str(counter),outp, sql))
                     writer.write(sql)
 
