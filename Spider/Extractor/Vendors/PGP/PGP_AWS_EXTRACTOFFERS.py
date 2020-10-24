@@ -12,6 +12,10 @@ from Hacker.ClusterClient import send
 class PGP_AWS_EXTRACTOFFERS:
 
     def __init__(self, selector):
+        """
+
+        :rtype: object
+        """
         self.php = PHP()
         self.__chrome__ = __Chromium__(True,False,"",False,False,True)
         self.__FULL__ = ""
@@ -37,12 +41,11 @@ class PGP_AWS_EXTRACTOFFERS:
                 if _key_ != "" and _val_ !="":
                     try:
                         self.STACK[_key_] = __path__.Stacked_extraction(_val_)
+                        print("{}"+str(self.__FULL__).format("      "))
                     except IndexError:
                         pass
                     finally:
                         self.__FULL__+= "{}!{}~{}\n".format("PGP",_key_,self.STACK[_key_])
-                        Logging(4, Bundle().getString(55), _key_)
-
             send(self.__FULL__)
 
             self.__FULL__ = ""
