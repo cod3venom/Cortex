@@ -34,7 +34,7 @@ if __name__ == '__main__':
                 pgp = PGP_AWS_EXTRACTOFFERS(sys.argv[6]).Start()
                 crx.c_main(pgp)
 
-            if sys.argv[5] == "PGP":
+            if sys.argv[5] == "EXPANDICA":
                 ex = Expandica_aws(sys.argv[6])
                 crx.c_main(ex)
 

@@ -25,6 +25,7 @@ class Expandica_aws:
             self.__chrome__.address = self.__LINK__.replace(".co.uk//", ".co.uk/")
             self.__chrome__.Navigate()
             self.__chrome__.Scroll_V_V()
+            time.sleep(4)
             __path__ = PyPath(self.__chrome__)
             __path__.Start(self.__chrome__.Source())
             __dict__ = self.__FORMAT__.Load()
@@ -42,6 +43,7 @@ class Expandica_aws:
                         Logging(4, Bundle().getString(55), _key_)
 
             send(self.__FULL__)
+            #exit()
 
             self.__FULL__ = ""
             self.__LINK__ = self.php.nextLink()
@@ -70,6 +72,12 @@ class Expandica_aws:
     PRODUCT_INFO_TABLE_VALUE="PRODUCT_INFO_TABLE_VALUE"
     PRODUCT_DESCRIPTION="PRODUCT_DESCRIPTION"
     PRODUCT_FROM_MANUFACTURER="PRODUCT_FROM_MANUFACTURER"
+    PRODUCT_REVIEW_USER = "PRODUCT_REVIEW_USER"
+    PRODUCT_REVIEW_USER_LINK = "PRODUCT_REVIEW_USER_LINK"
+    PRODUCT_REVIEW_USER_AVATAR = "PRODUCT_REVIEW_USER_AVATAR"
+    PRODUCT_REVIEW_USER_STARS = "PRODUCT_REVIEW_USER_STARS"
+    PRODUCT_REVIEW_USER_LOCATION_DATE = "PRODUCT_REVIEW_USER_LOCATION_DATE"
+    PRODUCT_REVIEW_USER_COMMENT = "PRODUCT_REVIEW_USER_COMMENT"
 
     STACK = {
         "QUEUEID":{}, "TITLE":{}, "SELLER":{},"SELLER_LINK":{}, "OFFER_RATING":{},
@@ -78,5 +86,8 @@ class Expandica_aws:
         "CUSTOMERS_WHO_REVIEWED_LINK":{},"CUSTOMERS_WHO_REVIEWED_IMAGE":{},
         "CUSTOMERS_WHO_REVIEWED_STARS":{},"CUSTOMERS_WHO_REVIEWED_PRICE":{},
         "PRODUCT_INFO_TABLE_KEY":{},"PRODUCT_INFO_TABLE_VALUE":{},
-        "PRODUCT_DESCRIPTION":{}, "PRODUCT_FROM_MANUFACTURER":{}
+        "PRODUCT_DESCRIPTION":{}, "PRODUCT_FROM_MANUFACTURER":{},
+        "PRODUCT_REVIEW_USER":{}, "PRODUCT_REVIEW_USER_LINK":{},
+        "PRODUCT_REVIEW_USER_AVATAR":{}, "PRODUCT_REVIEW_USER_STARS":{},
+        "PRODUCT_REVIEW_USER_LOCATION_DATE":{}, "PRODUCT_REVIEW_USER_COMMENT":{}
     }

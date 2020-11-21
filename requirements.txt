@@ -1,5 +1,8 @@
-pip3 install mysql-connector-python
-pip3 install socks
-pip3 install lxml
-pip3 install pytesseract
-
+mysql-connector-python
+socks
+lxml
+pytesseract
+selenium
+pysocks
+random_useragent
+stem
