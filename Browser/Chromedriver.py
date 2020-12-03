@@ -1,3 +1,4 @@
+import json
 import os
 import time
 from selenium import webdriver
@@ -9,7 +10,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from Browser.Hacker.hideNavigator import hideNavigator
 from Browser.Hacker.hideHeadless import hideHeadless
-
+from Browser.Hacker.mouseHandler import mouseHandler
+from Browser.Beautifer.htmlTojson import htmlTojson
+from Browser.Beautifer.htmlSegmentation import htmlSegmentation
 class Chromedriver:
 
     def __init__(self) -> int:
@@ -19,6 +22,7 @@ class Chromedriver:
         self.Config = None
         self.Interval = None
         self.Chrome = None
+
 
 
     """
@@ -63,3 +67,11 @@ class Chromedriver:
         hideNavigator(self.getChrome()).hideWebdriverFlag()
         hideHeadless(self.getChrome()).hideHeadlessFlag()
         self.getChrome().get(self.getAddress())
+        jsonizer = htmlTojson(self.getChrome())
+        jsonizer.setSource(self.getChrome().page_source)
+        jsonizer.removeTags('script')
+        jsonizer.removeTags('link')
+        jsonizer.removeTags('style')
+        segment = htmlSegmentation()
+        segment.setSource(self.getChrome().page_source)
+        segment.htmlToObject()
