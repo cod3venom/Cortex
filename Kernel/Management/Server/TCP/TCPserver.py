@@ -1,5 +1,5 @@
 import  socket
-from Kernel.Management.Manager.Config.Config import Config
+from Kernel.Management.Security.Config import Config
 
 class TCPserver:
 

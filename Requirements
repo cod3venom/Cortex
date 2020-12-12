@@ -4,3 +4,4 @@ numpy
 scipy
 websockets
 asyncio
+libtmux

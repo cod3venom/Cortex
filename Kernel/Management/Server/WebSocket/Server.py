@@ -1,6 +1,6 @@
 import asyncio
 import websockets
-from Kernel.Management.Manager.Config.Config import Config
+from Kernel.Management.Security.Config import Config
 from Kernel.Management.Server.WebSocket.CommandHandler import CommandHandler
 
 

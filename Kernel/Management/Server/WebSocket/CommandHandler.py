@@ -1,12 +1,10 @@
-import os
-
-from Kernel.Security.Process import Process
-from Kernel.Settings.Constants import Constants
+from Kernel.Management.Security.Process import Process
+from Kernel.Management.Security.Constants import Constants
 
 
 class CommandHandler:
     def __init__(self):
-        self.Message: str = ''
+        self.Message: str = Constants.EMPTY
         self.Client = None
         self.Process = Process()
 
@@ -48,15 +46,18 @@ class CommandHandler:
             """
             if Commands[0] == Constants.START:
                 if Commands[1] == Constants.SPIDER and Commands[2] is not None:
-                    self.RunSpider(Commands[2], Commands[3], Commands[4], Commands[5])
+                    self.Process.RunSpider(Commands[2], Commands[3], Commands[4], Commands[5])
+
+            if Commands[0] == Constants.STOP:
+                if Commands[1] == Constants.SPIDER and Commands[2] is not None:
+                    '''
+                    :param Commands[2] stands for OPTIONS_ID
+                    '''
+                    self.Process.StopSpider(Commands[2])
         except IndexError:
             pass
 
-    def RunSpider(self, CLIENT_IDENTIFIER: str, CLIENT_PASSWORD: str, OPTIONS_ID: str, TOTAL_PROCESS: int) -> int:
 
-        for process in range(int(TOTAL_PROCESS)):
-            Command = Constants.BOT_LAUNCHER.format(str(process), os.getcwd(), CLIENT_IDENTIFIER, CLIENT_PASSWORD, OPTIONS_ID)
-            self.Process.Execute(Command)
 
 
         #print(str(self.Process.getAllTasks()))

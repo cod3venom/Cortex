@@ -1,7 +1,5 @@
 import requests
 
-from Kernel.Settings.Constants import Constants
-
 
 class httpsock:
 
@@ -22,6 +20,7 @@ class httpsock:
         return self.address
 
     def Post(self, data: dict) -> requests.Response:
+        print(str(data))
         return self.getSession().post(self.getAddress(), data)
 
     def Get(self) -> str:
