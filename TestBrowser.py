@@ -18,9 +18,11 @@ def main()->int:
         print(link)
         driver.setAddress(link)
         driver.Navigate()
+        print(driver.getChrome().page_source)
 
     while True:
         pass
+
 
 if __name__ == '__main__':
     #CLIENT_IDENTIFIER = sys.argv[1]

@@ -22,16 +22,5 @@ class htmlTojson:
             return json.dumps(source,indent=4, sort_keys=True)
 
 
-    def removeTags(self,tagname:str)->bool:
-        if self.Browser is not None:
-            code = '''
-               var element = document.getElementsByTagName("$"), index;
-                for (index = element.length - 1; index >= 0; index--) {
-                    element[index].parentNode.removeChild(element[index]);
-                }
-            '''
-            code = code.replace('$',tagname)
-            self.Browser.execute_script(code)
-            return  True
-        return  False
+
 

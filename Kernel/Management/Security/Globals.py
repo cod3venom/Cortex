@@ -1,4 +1,7 @@
 import datetime, requests, urwid
+
+from selenium.webdriver.chrome.webdriver import WebDriver
+
 from Kernel.Bot.Class.Objects.LocalSettingsTObject import LocalSettingsTObject
 from Kernel.HTTP.httpsock import httpsock
 
@@ -43,9 +46,13 @@ def isLogged():
 
 
 '''
-    THE SELECTORS[] VARIABLE STANDS FOR XPATH SELECTORS GLOBAL STACK WHICH WILL BE USED IN MOST THE CLASSES
+    :param SELECTORS 
+    THIS VARIABLE STANDS FOR XPATH SELECTORS GLOBAL STACK WHICH WILL BE USED IN MOST SPIDER BASED CLASSES
 '''
 SELECTORS: list = []
+
+
+
 
 time_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 debug_counter = 0

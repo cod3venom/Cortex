@@ -1,19 +1,21 @@
 from selenium import webdriver
 
+from Kernel.Browser.Hacker.Javascript import Javascript
+
+
 class hideNavigator:
-    def __init__(self,Browser: webdriver.Chrome):
+    def __init__(self, Browser: webdriver.Chrome):
         if Browser is not None:
             self.Browser = Browser
 
-
     def hideWebdriverFlag(self):
         if self.Browser is not None:
-            if self.Browser.execute_script("return navigator.webdriver"):
+            if Javascript().Execute_js(self.Browser, "return navigator.webdriver"):
                 self.removeFlag(self.Browser)
 
     def removeFlag(self, Browser: webdriver.Chrome):
         if Browser is not None:
-            Browser.execute_cdp_cmd(
+            Javascript().Execute_cdp(Browser,
                 "Page.addScriptToEvaluateOnNewDocument",
                 {
                     "source": """
