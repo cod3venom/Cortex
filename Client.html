@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Thing1</title>
+</head>
+<body>
+<style>
+   .commander>*{
+       display: block;
+       width: 500px;
+       margin-top: .5rem;
+   }
+   textarea{
+       height: 200px;
+   }
+</style>
+<div class="commander">
+    <textarea id="output"></textarea>
+    <input type="text" id="input" value="Start Scraper root toor 171215ddce4364bbcbec5e7f6f92a902 6">
+    <button onclick="sendMsg()">Send Msg</button>
+    <button onclick="sendSignal('Stop spider test')">Stop process</button>
+</div>
+<div>
+    <textarea id="jsoninput">
+
+    </textarea>
+
+    <button id="compile">Compile</button>
+    <pre id="jsonOutput">
+
+    </pre>
+</div>
+</body>
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+
+<script>
+
+    $("#compile").click(function(){
+        $("#jsonOutput").html($("#jsoninput").val())
+    });
+
+    // Create WebSocket connection.
+    var socket = new WebSocket('ws://localhost:8001');
+
+    // Connection opened
+    socket.addEventListener('open', function (event) {
+        console.log('Connected to the WS Server!')
+    });
+
+    // Connection closed
+    socket.addEventListener('close', function (event) {
+        console.log('Disconnected from the WS Server!')
+        //socket = new WebSocket('ws://localhost:8001');
+    });
+
+    // Listen for messages
+    socket.addEventListener('message', function (event) {
+      console.log(event.data);
+        $("#output").val(event.data);
+    });
+    // Send a msg to the websocket
+    const sendMsg = () => {
+        socket.send($("#input").val());
+    }
+    function sendSignal(signal){
+        socket.send(signal);
+    }
+</script>
+</html>

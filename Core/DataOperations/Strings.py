@@ -1,0 +1,10 @@
+EMPTY = ''
+NEWLINE = '\n'
+HASHTAG = '#'
+SPACE = " "
+DOT = "."
+Start = 'start'
+Stop = 'stop'
+Scraper = 'scraper'
+Spider = 'spider'
+NOLIST = '[]'
