@@ -1,5 +1,9 @@
 import os
 
+from Core.DataOperations.Logger import Logger
+from Core.DataOperations.Strings import EMPTY
+from Core.DataOperations.Logger.Levels import Levels
+
 
 class FileSystem:
 
@@ -12,7 +16,7 @@ class FileSystem:
     def append(self, file_path: str, content: str) -> bool:
         if file_path is not None and content is not None:
             with open(file_path, 'a', encoding='utf8') as appender:
-                appender.write(content+'\n')
+                appender.write(content + '\n')
                 return True
         return False
 
@@ -31,3 +35,14 @@ class FileSystem:
                 writer.write(content)
                 return True
         return False
+
+    def getFilename(self, path) -> str:
+        if '/' in path:
+            file = path.split('/')[-1]
+            if '.' in file:
+                return file.split('.')[0]
+            else:
+                Logger.Logger(True, 14, Levels.Warning)
+        else:
+            Logger.Logger(True, 13, Levels.Warning)
+        return EMPTY

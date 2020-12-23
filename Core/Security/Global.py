@@ -2,8 +2,6 @@ import requests, sys
 
 from Core.DAO.LocalSettingsTObject import LocalSettingsTObject
 from Core.DataOperations.Logger.Levels import Levels
-from Core.DataOperations.Strings import EMPTY
-from Core.Security.FileSystem import FileSystem
 from Core.Security.Rest.http import Http
 
 """
@@ -91,6 +89,17 @@ GLOBAL_LOG: str = ''
 CUSTOM_HTML_LOCATORS: list = ['img', 'p', 'button']
 
 
+'''
+    :param JS_STACK
+    This parameter will contain javascript code with the key value format.
+    It fill be used after web page will load, to execute some javascript payloads.
+'''
+
+
+
+
+
+
 
 def report_errors(exc_type, exc_value, tb):
     import traceback
@@ -98,3 +107,11 @@ def report_errors(exc_type, exc_value, tb):
 
 
 sys.excepthook = report_errors
+
+
+'''
+    JSON_DUMP
+'''
+
+JSON_DUMP = []
+

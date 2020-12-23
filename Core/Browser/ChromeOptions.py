@@ -13,15 +13,15 @@ class ChromeOptions:
         if self.BOT_OPTIONS.ARG_INCOGNITO == 1:
             option.add_argument('--incognito')
         if self.BOT_OPTIONS.ARG_HEADLESS == 1:
-            #option.headless = True
+            option.headless = True
             option.add_argument('disable-gpu')
 
         if len(self.BOT_OPTIONS.ARG_CACHE_FOLDER) > 3:
             option.add_argument('--user-data={}'.format(self.BOT_OPTIONS.ARG_CACHE_FOLDER))
         if self.BOT_OPTIONS.ARG_TOR == 1:
-            option.add_argument('--proxy-server=socks5://127.0.0.1:9050')
-            option.add_argument('ignore-certificate-errors')
-
+            #option.add_argument('--proxy-server=socks5://127.0.0.1:9050')
+            #option.add_argument('ignore-certificate-errors')
+            pass
         option.add_argument('window-size=1700,1500')
         option.add_argument('--disable-dev-shm-usage')
         option.add_argument('--disable-extensions')

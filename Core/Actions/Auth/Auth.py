@@ -1,13 +1,10 @@
 import time
 from concurrent.futures.thread import ThreadPoolExecutor
 
-from Core.Actions.Auth.Spider import Spider
-from Core.Browser.ChromeDriver import ChromeDriver
-from Core.Browser.ChromeOptions import ChromeOptions
-from Core.DataOperations.Logger.Logger import Logger, EMPTY
+from Core.Actions.Vendors.AWS_Spider import Spider
+from Core.DataOperations.Logger.Logger import EMPTY
 from Core.Security.Global import AppendToFactory, GetFactory
 from Core.Security.Rest.RestClient import RestClient
-from Core.DataOperations.Logger.Levels import Levels
 
 
 class Auth:
