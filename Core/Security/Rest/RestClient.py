@@ -4,6 +4,7 @@ from Core.DAO.BotLinksTObject import BotLinksTObject
 from Core.DAO.BotOptionsTObject import BotOptionsTObject
 from Core.DAO.BotProxyTObject import BotProxyTObject
 from Core.DAO.BotXpathSelectorTObject import BotXpathSelectorTObject
+from Core.DAO.EkwNumbersListTObject import EkwNumbersListTObject
 from Core.DataOperations.Logger.Logger import Logger
 from Core.Security.Global import *
 from Core.DataOperations.Strings import *
@@ -76,3 +77,13 @@ class RestClient:
             if Response:
                 return BotJavascriptTObject.TO(Response)
         return BotJavascriptTObject.TO(EMPTY)
+
+    def getEkwNumbers(self, Ekw_numbers_pack_id):
+        if isLogged() and Ekw_numbers_pack_id != EMPTY:
+            # 24#GetNextEkwNumbers
+            # 25#Ekw_numbers_pack_id
+            Request = {self.__bundler.getReq(24): EMPTY, self.__bundler.getReq(25): Ekw_numbers_pack_id}
+            Response = http.Post(Request)
+            if Response:
+                return EkwNumbersListTObject.TO(Response)
+        return EkwNumbersListTObject.TO(EMPTY)

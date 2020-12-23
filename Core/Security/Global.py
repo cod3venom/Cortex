@@ -57,23 +57,6 @@ def isLogged():
 '''
 __SELECTORS__: list = []
 
-'''
-    :param __THREAD_FACTORY__
-'''
-__THREAD_FACTORY__: list = []
-
-
-def AppendToFactory(threadPool):
-    if threadPool not in __THREAD_FACTORY__:
-        __THREAD_FACTORY__.append(threadPool)
-
-
-def ClearFactory():
-    __THREAD_FACTORY__.clear()
-
-
-def GetFactory():
-    return __THREAD_FACTORY__
 
 
 '''
@@ -94,6 +77,8 @@ CUSTOM_HTML_LOCATORS: list = ['img', 'p', 'button']
     This parameter will contain javascript code with the key value format.
     It fill be used after web page will load, to execute some javascript payloads.
 '''
+
+
 
 
 

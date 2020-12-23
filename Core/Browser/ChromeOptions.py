@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 class ChromeOptions:
-    def __init__(self, BOT_OPTIONS: BotOptionsTObject, BOT_PROXY: BotProxyTObject):
+    def __init__(self, BOT_OPTIONS: BotOptionsTObject, BOT_PROXY: BotProxyTObject = None):
         self.BOT_OPTIONS = BOT_OPTIONS
         self.BOT_PROXY = BOT_PROXY
 
@@ -13,7 +13,7 @@ class ChromeOptions:
         if self.BOT_OPTIONS.ARG_INCOGNITO == 1:
             option.add_argument('--incognito')
         if self.BOT_OPTIONS.ARG_HEADLESS == 1:
-            option.headless = True
+            #option.headless = True
             option.add_argument('disable-gpu')
 
         if len(self.BOT_OPTIONS.ARG_CACHE_FOLDER) > 3:

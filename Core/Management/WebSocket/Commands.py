@@ -1,9 +1,9 @@
-from Core.Actions.Auth.Auth import Auth
+from Core.Actions.Auth.AWS.AwsAuth import AwsAuth
+from Core.Actions.Auth.Ekw.EkwAuth import EkwAuth
 from Core.DataOperations.Logger.Logger import Logger
 from Core.DataOperations.Strings import *
 from Core.Security.Global import *
 from Core.Texts.Bundler import Bundler
-from concurrent.futures import ThreadPoolExecutor
 
 
 class Commands:
@@ -34,7 +34,6 @@ class Commands:
             self.setMessage(Message)
             await self.Handler()
 
-
     async def Handler(self):
         if SPACE in self.getMessage():
             Com = self.getMessage().split(SPACE)
@@ -44,16 +43,23 @@ class Commands:
         try:
             """
                 Commands[0] = Start with capital S
-                Commands[1] = scraper with lower s
-                Commands[2] = Botclient username
-                Commands[3] = Botclient password 
-                Commands[4] = OPTIONS_ID 
-                Commands[5] = TOTAL_PROCESS 
+                Commands[1] = amazon
+                Commands[2] = product
+                Commands[3] = scraper
+                Commands[4] = bot identifier
+                Commands[5] = bot password 
+                Commands[6] = options_id 
+                Commands[7] = total process number 
             """
+            # Start amazon product scraper admin pgp fcee8557690e8ce6a9292310ff02dd71 6
             if Com[0] == Start:
-                if Com[1] == Scraper and Com[2] is not None and Com[3] is not None and Com[4] is not None and Com[5] is not None:
-                    Auth(Com[2], Com[3], Com[4], Com[5]).Login()
+                if Com[1] == Amazon and Com[2] == Product and Com[3] == Scraper and Com[4] is not None and Com[5] and \
+                        Com[6] is not None and Com[7] is not None:
+                    AwsAuth(Com[4], Com[5], Com[6], Com[7]).Login()
+
+                if Com[1] == Ekw and Com[2] is not None and Com[3] is not None and Com[4] is not None:
+                    EkwAuth(Com[2], Com[3], Com[4], Com[5]).Login()
 
 
         except IndexError as index:
-            Logger(True, 2,levels.Warning)
+            Logger(True, 2, levels.Warning)

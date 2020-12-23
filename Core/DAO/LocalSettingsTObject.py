@@ -27,5 +27,7 @@ class LocalSettingsTObject:
             self.BINARY_PATH = JsonData["BINARY_PATH"]
             self.JSON_EXPORT_PATH = JsonData["JSON_EXPORT_PATH"]
             self.CSV_EXPORT_PATH = JsonData["CSV_EXPORT_PATH"]
+            self.PDF_EXPORT_PATH = JsonData["PDF_EXPORT_PATH"]
+            self.HTML_EXPORT_PATH = JsonData["HTML_EXPORT_PATH"]
             self.JS_PATH = JsonData["JS_PATH"]
             self.Bundler = Bundler(self)

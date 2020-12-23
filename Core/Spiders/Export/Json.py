@@ -28,7 +28,6 @@ class Json:
         return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def export(self, append_mode: bool = True, duplicates=True):
-        print(self.export_name)
         if append_mode:
             if duplicates:
                 self.__fileSystem.appendToFile(self.export_name, str(self.data), True)

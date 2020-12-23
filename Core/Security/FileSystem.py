@@ -6,6 +6,7 @@ from Core.DataOperations.Logger.Levels import Levels
 
 
 class FileSystem:
+    chmod_allow_everything = 0o777
 
     def readfile(self, file_path: str) -> str:
         if file_path is not None:
@@ -46,3 +47,9 @@ class FileSystem:
         else:
             Logger.Logger(True, 13, Levels.Warning)
         return EMPTY
+
+    def Create_dir(self, path):
+        if not os.path.exists(path):
+            os.mkdir(path)
+            os.chmod(path, self.chmod_allow_everything)
+        return path
