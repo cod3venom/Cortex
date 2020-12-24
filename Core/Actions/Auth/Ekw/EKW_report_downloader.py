@@ -53,28 +53,28 @@ class Report_downloader:
             self.Elements.Input(self.EKw_config.Third_code_css, self.Ekw_numbers.THIRD_PART)
             self.HitSearch()
             self.OpenReport()
-            self.ReportFolder = "{}{}_{}_{}".format(Local_Settings.HTML_EXPORT_PATH,
-                                                    self.Ekw_numbers.FIRST_PART,
-                                                    self.Ekw_numbers.SECOND_PART,
-                                                    self.Ekw_numbers.THIRD_PART)
-            if not os.path.exists(self.ReportFolder):
-                self.OpenNextPage()
 
             self.Ekw_numbers = self.__rest.getEkwNumbers(self.Ekw_numbers.EKW_NUMBERS_PACK_ID)
 
     def HitSearch(self):
         self.Elements.Click(self.EKw_config.Form_submit_css)
         self.MakePause()
+        self.OpenReport()
 
     def RecordWasFound(self):
-        if self.EKw_config.wrong_third_number not in self.browser.getBrowser().page_source:
-            if self.EKw_config.record_not_found not in self.browser.getBrowser().page_source:
-                return True
+        source = str(self.browser.getBrowser().page_source).strip()
+        if self.EKw_config.record_not_found in source or self.EKw_config.wrong_third_number in source:
+            return False
+        return True
 
     def OpenReport(self):
         if self.RecordWasFound():
             self.Elements.Click(self.EKw_config.Report_view_css)
             self.MakePause()
+            self.ReportFolder = "{}{}_{}_{}".format(Local_Settings.HTML_EXPORT_PATH, self.Ekw_numbers.FIRST_PART,
+                                                    self.Ekw_numbers.SECOND_PART, self.Ekw_numbers.THIRD_PART)
+            if not os.path.exists(self.ReportFolder):
+                self.OpenNextPage()
 
     def CountPages(self):
         total = self.XpathSelector.Extract(self.browser.getBrowser().page_source, self.EKw_config.Pages_count_xpath)
