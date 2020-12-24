@@ -1,0 +1,28 @@
+{
+  "CORTEX":
+  [
+    {
+      "VERSION":"1.2",
+      "GATE_URL": "http://localhost/Silicon/index.php",
+      "LOGOUT_URL": "http://localhost/Silicon/index.php?Logout",
+      "en_US" : "/usr/share/cortex/Texts/en_US.lang",
+      "pl_PL" : "/usr/share/cortex/Texts/pl_PL.lang",
+      "REST_REQUESTS" : "/usr/share/cortex/Rest/Requests.cort",
+      "WSS_MANAGER_USERNAME" : "Admin",
+      "WSS_MANAGER_PASSWORD" : "Admin",
+      "LOCAL_HOST" : "127.0.0.1",
+      "WSS_MANAGER_PORT" : "8001",
+      "TCP_SERVER_PORT" : "8000",
+      "TCP_SERVER_BUFFER" : "131071",
+      "TERMINAL_PREFIX" : "Cortex.{}@Levan: ",
+      "LOG_FORMAT":"{}{}[{}][{}] -- {}",
+      "BINARY_PATH" : "/Core/Browser/Bin/chromedriver",
+      "JS_PATH" : "/usr/share/cortex/payloads/js/",
+      "JSON_EXPORT_PATH" : "Storage/Exports/Json/",
+      "CSV_EXPORT_PATH" : "Storage/Exports/Csv/",
+      "PDF_EXPORT_PATH" : "Storage/Exports/pdf/",
+      "HTML_EXPORT_PATH" : "Storage/Exports/html/"
+    }
+  ]
+}
+

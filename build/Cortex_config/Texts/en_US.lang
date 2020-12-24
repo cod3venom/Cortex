@@ -1,0 +1,18 @@
+1# CORTEX WEBSOCKET SERVER STARTED SUCCESSFULLY
+2# Commands index doesn't match.
+3# Cannot convert JSON data to the Class Objects, maybe wrong keys.
+4#USER_ID
+5#CLIENT_ID
+6#CLIENT_IDENTIFIER
+7#CLIENT_LEVEL
+8# Logged in successfully
+9# Detected etree.parseError
+10# Detected etree.XpathEvalError
+11# Performed hover action on {}
+12# Can't find element {} to execute hover action , keep continue
+13# JsLoader -> file path doesn't contains slashes (/)
+14# File doesn't contains dot (.)
+15# Loaded javascript code : {}
+16# Cant lookup required element : {}
+17# Cant extract selector : {}
+18# Wrong xpath syntax
