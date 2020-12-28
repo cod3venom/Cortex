@@ -1,7 +1,7 @@
 import requests, sys
 
-from Core.DAO.LocalSettingsTObject import LocalSettingsTObject
-from Core.DataOperations.Logger.Levels import Levels
+from DAO.LocalSettingsTObject import LocalSettingsTObject
+from Logger.Levels import Levels
 from Core.Security.Rest.http import Http
 
 """
@@ -59,11 +59,7 @@ __SELECTORS__: list = []
 
 
 
-'''
-    :param GLOBAL_LOG
-    in this variable will stored all console outputs
-'''
-GLOBAL_LOG: str = ''
+
 
 '''
     :param CUSTOM_HTML_LOCATORS

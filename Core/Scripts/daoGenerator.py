@@ -25,7 +25,7 @@ class CLASSNAME:
             else:
                 EMPTY_DICT
         except KeyError as KeyErr:
-            Logger(True, 3, levels.Error)
+            pass # print (True, 3, levels.Error) 
 
     def __repr__(self):
         buffer = StringBuilder()

@@ -1,8 +1,8 @@
 import os
 
-from Core.DataOperations.Logger import Logger
+from Logger import Logger
 from Core.DataOperations.Strings import EMPTY
-from Core.DataOperations.Logger.Levels import Levels
+from Logger.Levels import Levels
 
 
 class FileSystem:
@@ -43,9 +43,11 @@ class FileSystem:
             if '.' in file:
                 return file.split('.')[0]
             else:
-                Logger.Logger(True, 14, Levels.Warning)
+                pass
+                # print (True, 14, Levels.Warning)
         else:
-            Logger.Logger(True, 13, Levels.Warning)
+            pass
+            # print (True, 13, Levels.Warning)
         return EMPTY
 
     def Create_dir(self, path):

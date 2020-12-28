@@ -6,12 +6,10 @@ import pdfkit
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from lxml import etree, html
-from Core.Browser.ChromeDriver import ChromeDriver
-from Core.Browser.ChromeOptions import ChromeOptions
-from Core.Browser.Hacking.jsExec import jsExec
-from Core.Browser.JSbundler.jsLoader import jsLoader
-from Core.DAO.BotOptionsTObject import BotOptionsTObject
-from Core.DAO.BotProxyTObject import BotProxyTObject
+from Browser.ChromeDriver import ChromeDriver
+from Browser.ChromeOptions import ChromeOptions
+from DAO.BotOptionsTObject import BotOptionsTObject
+from DAO.BotProxyTObject import BotProxyTObject
 
 selectors = [
     '''concat("KOD WYDZIAŁU : ", //input[1]/@value) ''',
@@ -74,7 +72,7 @@ class Main:
         chromeOpts = ChromeOptions(options, proxy).getOptions()
         self.driver = ChromeDriver(parse_xpath_on=False)
         self.driver.setBrowser(options=chromeOpts,
-                               Path='/home/venom/Desktop/DEV/Cortex_versions/Cortex1.2/Core/Browser/Bin/chromedriver')
+                               Path='/Browser/Bin/chromedriver')
 
     def loadInputs(self):
         for inputs in input_stack:

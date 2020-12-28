@@ -1,9 +1,10 @@
-from Core.Actions.Auth.AWS.AwsAuth import AwsAuth
-from Core.Actions.Auth.Ekw.EkwAuth import EkwAuth
-from Core.DataOperations.Logger.Logger import Logger
+from Vendors.AWS.Main import AwsAuth
+from Vendors.Ekw.Main import EkwAuth
+from Vendors.Allegro.Main import AllegroAuth
+
+from Logger.Logger import Logger
 from Core.DataOperations.Strings import *
-from Core.Security.Global import *
-from Core.Texts.Bundler import Bundler
+import Core.Security.Global as Global
 
 
 class Commands:
@@ -11,7 +12,7 @@ class Commands:
     def __init__(self):
         self.__Message = EMPTY
         self.__Client = None
-        self.__bundler = Bundler(Local_Settings)
+        self.logger = Logger()
 
     def setMessage(self, message: str):
         self.__Message = message.lower()
@@ -27,8 +28,7 @@ class Commands:
 
     async def Server_listener(self, client, path):
         self.setClient(client)
-
-        Logger(True, 1, levels.Info)
+        self.logger.Print(1, Global.levels.Info, bundler=True)
 
         async for Message in self.__Client:
             self.setMessage(Message)
@@ -60,6 +60,9 @@ class Commands:
                 if Com[1] == Ekw and Com[2] is not None and Com[3] is not None and Com[4] is not None:
                     EkwAuth(Com[2], Com[3], Com[4], Com[5]).Login()
 
+                if Com[1] == Allegro and Com[2] == Category and Com[3] == Crawler and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
+                    AllegroAuth(Com[4], Com[5], Com[6],0).parseCategory()
+                    exit()
 
         except IndexError as index:
-            Logger(True, 2, levels.Warning)
+            self.logger.Print(2, Global.levels.Info, bundler=True)

@@ -1,0 +1,12 @@
+//div[contains(@class,"card")]/h2/text() -- main header
+//div[contains(@class,"card")]/div/../h3/text() -- category type
+
+//div[contains(@class,"card")]/div//a[contains(@href,"kategoria")]/text() -- category link name
+
+//div[contains(@class,"card")]/div//a[contains(@href,"kategoria")]/@href -- category link
+
+main header [category-type][1] = {"TITLE": category link name, "LINK" : category link}
+
+
+
+//h3[contains(text(),"AGD")]/..//li/a/text()

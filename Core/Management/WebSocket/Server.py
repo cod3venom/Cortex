@@ -1,7 +1,6 @@
 import asyncio, websockets
 
-from Core.DataOperations.Logger.Logger import Logger
-from Core.Security.Global import Local_Settings, levels
+from Core.Security.Global import Local_Settings
 from Core.Management.WebSocket.Commands import Commands
 
 
