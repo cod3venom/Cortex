@@ -22,6 +22,7 @@ class ChromeOptions:
             #option.add_argument('--proxy-server=socks5://127.0.0.1:9050')
             #option.add_argument('ignore-certificate-errors')
             pass
+        #option.headless = True
         option.add_argument('window-size=1700,1500')
         option.add_argument('--disable-dev-shm-usage')
         option.add_argument('--disable-extensions')

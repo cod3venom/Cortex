@@ -57,13 +57,17 @@ class ChromeDriver:
     def getBrowser(self) -> webdriver.Chrome:
         return self.Browser
 
-    def Navigate(self, screenshot=False, scrollBottom=False):
+    def Navigate(self, screenshot=False, scrollBottom=False, sanitize: bool = None):
         global counter
         if self.getAddress():
             self.exploitPack.RemoveHeadless(self.getBrowser())
             self.exploitPack.HideNavigator(self.getBrowser())
             self.getBrowser().get(self.getAddress())
-            self.setSource(Sanitizer(self.Browser).RemoveUnwantedTags())
+            if sanitize:
+                self.setSource(Sanitizer(self.Browser).RemoveUnwantedTags())
+            else:
+                self.setSource(self.Browser.page_source)
+
             self.exploitPack.CrazyMouse(self.Browser)
 
             if screenshot:

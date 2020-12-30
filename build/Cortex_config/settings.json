@@ -16,13 +16,43 @@
       "TCP_SERVER_BUFFER" : "131071",
       "TERMINAL_PREFIX" : "Cortex.{}@Levan: ",
       "LOG_FORMAT":"{}{}[{}][{}] -- {}",
-      "BINARY_PATH" : "/Core/Browser/Bin/chromedriver",
+      "BINARY_PATH" : "/Browser/Bin/chromedriver",
       "JS_PATH" : "/usr/share/cortex/payloads/js/",
       "JSON_EXPORT_PATH" : "Storage/Exports/Json/",
-      "CSV_EXPORT_PATH" : "Storage/Exports/Csv/",
+      "CSV_EXPORT_PATH" : "Storage/Exports/csv/",
       "PDF_EXPORT_PATH" : "Storage/Exports/pdf/",
-      "HTML_EXPORT_PATH" : "Storage/Exports/html/"
-    }
+      "HTML_EXPORT_PATH" : "Storage/Exports/html/",
+      "TXT_EXPORT_PATH" : "Storage/Exports/txt/",
+      "ALLEGRO": {
+        "Config": {
+          "DOMAIN": "allegro.pl",
+          "ROOT_PATH": "https://www.allegro.pl",
+          "PAGE_LINK_PARAMS": "?bmatch=cl-dict201214-ctx-ele-1-2-1218&p=",
+          "USER_ADDR": "https://www.allegro.pl/użytkownik/"
+        },
+        "CategoryTObject": {
+            "URL": "https://allegro.pl/mapa-strony/kategorie",
+            "CATEGORY_TYPE_SELECTOR": "//div[contains(@class,\"card\")]/div/../h3/text()",
+            "CATEGORY_TITLE_SELECTOR": "//h3[contains(text(),\"$\")]/..//li/a/text()",
+            "CATEGORY_LINK_SELECTOR": "//h3[contains(text(),\"$\")]/..//li/a/@href"
+          },
+        "CategoryListingPages": {
+            "TOTAL_PAGES_COUNTER_SELECTOR": "normalize-space(//a[contains(@aria-label,\"przejdź do strony\")]/../span[1]/text())"
+          },
+        "ListingOfferTObject" : {
+            "CATEGORY_NAME": "normalize-space(//a[@itemprop=\"item\"][contains(@href,\"-\")]/span[@itemprop=\"name\"]/text())",
+            "OFFER_IMAGE": "//article//a[contains(@href,\"/oferta/\")]//img[contains(@src,\"a.allegroimg.\")]/@src",
+            "OFFER_TITLE": "//article//a[1][string(text()) != ''][not(contains(text(),\"wszystkie oferty\"))][not(contains(text(),\"dostaw\"))][not(contains(text(),\"dostęp\"))]/text()",
+            "OFFER_LINK": "//article//a[1][string(text()) != ''][not(contains(text(),\"wszystkie oferty\"))][not(contains(text(),\"dostaw\"))][not(contains(text(),\"dostęp\"))]/@href",
+            "OFFER_PRICE": "//article//span[contains(@class,\"_1svub\")]/text()",
+            "OFFER_TOTAL_SOLD": "//article//span[contains(text(),\"osób kupiło\")]/text()"
+          },
+        "OfferTObject": {
+            "OFFER_JSON": "//script[@type='application/json'][@data-serialize-box-name='summary'][concat(text(), '\"}}')]/text()",
+            "OFFER_DESCRIPTION": "//div[@data-analytics-category=\"allegro.showoffer.description\"]//text()"
+          }
+        }
+      }
   ]
 }
 

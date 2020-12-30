@@ -7,7 +7,7 @@ class CategoryTObject:
     def __init__(self, categoryType: str, categoryTitle: str, categoryLink: str):
         self.categoryType = categoryType
         self.categoryTitle = categoryTitle
-        self.categoryLink = categoryLink
+        self.categoryLink = Global.Local_Settings.ALLEGRO_config["ROOT_PATH"] + categoryLink
         self.logger = Logger()
         self.logger.Print(0, Global.levels.hackerType, message=self.__repr__(), bundler=False)
 

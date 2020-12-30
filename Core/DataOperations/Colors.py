@@ -25,4 +25,4 @@ class Colors:
 
     @property
     def hackerType(self):
-        return Fore.RED
+        return Fore.LIGHTCYAN_EX

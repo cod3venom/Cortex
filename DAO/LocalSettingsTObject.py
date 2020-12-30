@@ -29,5 +29,11 @@ class LocalSettingsTObject:
             self.CSV_EXPORT_PATH = JsonData["CSV_EXPORT_PATH"]
             self.PDF_EXPORT_PATH = JsonData["PDF_EXPORT_PATH"]
             self.HTML_EXPORT_PATH = JsonData["HTML_EXPORT_PATH"]
+            self.TXT_EXPORT_PATH = JsonData["TXT_EXPORT_PATH"]
             self.JS_PATH = JsonData["JS_PATH"]
+            self.ALLEGRO_config = JsonData["ALLEGRO"]["Config"]
+            self.ALLEGRO_CategoryParser = JsonData["ALLEGRO"]["CategoryTObject"]
+            self.ALLEGRO_CategoryListingPages = JsonData["ALLEGRO"]["CategoryListingPages"]
+            self.ALLEGRO_CategoryExtractLinks = JsonData["ALLEGRO"]["ListingOfferTObject"]
+            self.ALLEGRO_OfferExtractor = JsonData["ALLEGRO"]["OfferTObject"]
             self.Bundler = Bundler(self)

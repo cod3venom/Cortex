@@ -61,8 +61,19 @@ class Commands:
                     EkwAuth(Com[2], Com[3], Com[4], Com[5]).Login()
 
                 if Com[1] == Allegro and Com[2] == Category and Com[3] == Crawler and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
-                    AllegroAuth(Com[4], Com[5], Com[6],0).parseCategory()
-                    exit()
+                    AllegroAuth(Com[4], Com[5], Com[6], 0).parseCategory()
+
+                if Com[1] == Allegro and Com[2] == Category and Com[3] == StackView and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
+                    AllegroAuth(Com[4], Com[5], Com[6], 0).parseCategory(stackView=True)
+
+                if Com[1] == Allegro and Com[2] == Category and Com[3] == FullReport and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
+                    AllegroAuth(Com[4], Com[5], Com[6], 0).parseCategory(fullReport=True)
+
+                if Com[1] == Allegro and Com[2] == Category and Com[3] == gen_listing_pages and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
+                    AllegroAuth(Com[4], Com[5], Com[6], 0).genListingPages()
+
+                if Com[1] == Allegro and Com[2] == Category and Com[3] == get_offer_links and Com[4] is not None and Com[5] is not None and Com[6] is not None and Com[7]:
+                    AllegroAuth(Com[4], Com[5], Com[6], 0).parseOfferPages()
 
         except IndexError as index:
             self.logger.Print(2, Global.levels.Info, bundler=True)
