@@ -19,5 +19,11 @@ Google Chrome v 86
 - [+] Fast data parser
 - [+] Can be used with Cluster (Data segregation software)
 
+##### Vendors
+- [+] AMAZON
+- [+] Ebay
+- [+] Aliexpress
+- [+] Allegro
+
 
 ![alt text](Readme/Cluster.png)
