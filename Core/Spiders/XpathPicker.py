@@ -3,6 +3,7 @@ from lxml import etree, html
 from Core.DataOperations.Strings import EMPTY
 from Logger.Logger import Logger
 import Core.Security.Global as Global
+from Core.Security.Global import JSON_DUMP
 from Core.Spiders.Export.Json import Json
 
 artificial_indexer = 0
